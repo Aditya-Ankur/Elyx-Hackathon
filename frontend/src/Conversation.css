@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e5ddd5; /* WhatsApp-like background */
+}
+
+.conversation-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f0f2f5;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.conversation-header {
+  background-color: #111111; /* Dark Teal */
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.team-avatars {
+  display: flex;
+}
+
+.team-avatars .avatar {
+  width: 35px;
+  height: 35px;
+  margin-left: -10px;
+  border: 2px solid #005E54;
+}
+
+.scrollable-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #e5ddd5; /* Main background for scroll area */
+}
+
+.messages-container {
+  padding: 20px;
+  /* Removed flex-grow, overflow-y, and background-color */
+}
+
+.message-wrapper {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: flex-end;
+}
+
+.message-wrapper.customer {
+  justify-content: flex-end;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #607d8b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.message-wrapper.customer .avatar {
+  order: 2;
+  margin-right: 0;
+  margin-left: 10px;
+  background-color: #3B82F6;
+}
+
+.message-content {
+  max-width: 75%;
+}
+
+.message-bubble {
+  background-color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.message-bubble.customer {
+  background-color: #dcf8c6; /* WhatsApp sent message color */
+}
+
+.message-header {
+  margin-bottom: 4px;
+}
+
+.header-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.sender-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #005E54; /* Changed for better visibility */
+}
+
+.sender-role {
+  font-size: 0.75rem;
+  color: #54656f; /* Darkened for better contrast */
+}
+
+.message-bubble p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #111b21;
+}
+
+.message-tags, .customer-message-tags {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.message-type-tag, .message-category-tag {
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #54656f; /* Darkened for better contrast */
+  text-align: right;
+  margin-top: 4px;
+  float: right;
+  clear:both;
+}
+
+.date-separator {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.date-separator span {
+  background-color: #e1f3fb;
+  color: #54656f;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.time-diff-separator {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.time-diff-separator span {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #4a4a4a;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.attachment-bubble {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.attachment-icon {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #f0f2f5;
+  border: 1px solid #d1d7db;
+  color: #667781;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.info-button:hover {
+  background-color: #e9edef;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.explanation-box {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.explanation-box p {
+  margin: 0;
+}
+
+.explanation-box .error-text {
+  color: #d32f2f;
+  font-style: italic;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #005E54;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+/* Episode Summary Styles */
+.episodes-container {
+  padding: 20px;
+  background-color: #ffffff; /* Changed for contrast */
+  border-top: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+.episode-summary {
+  max-width: 100%;
+  color: #333;
+}
+
+.episode-month-title {
+  font-size: 1.4rem;
+  color: #005E54;
+  border-bottom: 2px solid #005E54;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.episode-title {
+  font-size: 1.2rem;
+  color: #111b21;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.episode-summary p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.episode-summary p strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.episode-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.episode-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.episode-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.episode-table th, .episode-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.episode-table th {
+  background-color: #e9edef;
+  font-weight: 600;
+  color: #005E54;
+}
+
+.episode-table tr:last-child td {
+  border-bottom: none;
+}
+
+.episode-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
