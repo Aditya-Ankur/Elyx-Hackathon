@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'http://localhost:5174',
+  origin: 'https://elyx-hackathon-1-s5vb.onrender.com',
   methods: ['GET', 'POST'],
   credentials: true
 }));
